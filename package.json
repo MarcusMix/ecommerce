@@ -36,12 +36,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -58,15 +52,6 @@
     "@types/react-redux": "^7.1.24",
     "@types/redux-logger": "^3.0.9",
     "@types/styled-components": "^5.1.26",
-    "@types/validator": "^13.7.8",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.31.10",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier-config-standard": "^5.0.0"
+    "@types/validator": "^13.7.8"
   }
 }
