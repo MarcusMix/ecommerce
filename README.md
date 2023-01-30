@@ -1,46 +1,90 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ecommerce de roupas masculinas e femininas
 
-## Available Scripts
+Projeto para praticar react, e diversas outras tecnologias, para construir um Ecommerce online 100% funcional. Com autenticação de usuário, catálogo das roupas e acessórios, meios de pagamentos integrados.
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Autores
 
-### `yarn test`
+- [@feliperocha](https://www.github.com/feliperocha)
+- [@MarcusMix](https://www.github.com/marcusmix)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Etiquetas
 
-### `yarn eject`
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deploy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para fazer o deploy desse projeto rode
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  git clone https://github.com/MarcusMix/ecommerce
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Funcionalidades
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Autenticação de usuário OAuth Google.
+- Pagamentos feito via API do Stripe.
+- Responsivo.
+
+
+## FAQ
+
+#### Foi você que inventou o projeto?
+
+Não, projeto foi feito pelo Felipe Rocha (dicasparadevs) no Curso React PRO, e dentro do curso ele foi ensinando as melhores praticas e dicas para construir esse ecommerce.
+
+#### Foi dificil?
+
+Sim, no começo encontrei diversas dificuldades, mas ao longo do curso, e praticando muito, e revendo sempre o conteúdo, começei a pegar a "mãnha".
+
+
+## Aprendizados
+
+Aprendi diversas tecnologias no processo, as principais foram:
+- TypeScript
+- Redux
+- Context API
+- Integração com Firebase
+- Autenticação com usuário
+- API Stripe para pagamentos
+
+E diversos outros como boas práticas no código, otimização e padronização.
+
+
+
+## Screenshots
+
+![Screenshot](https://i.imgur.com/L369oPX.png)
+
+![Screenshot](https://i.imgur.com/OuYoBdX.png)
+
+![Screenshot](https://i.imgur.com/4Nu52rU.png)
+
+![Screenshot](https://i.imgur.com/ev4Zwhb.png)
+
+![Screenshot](https://i.imgur.com/h4l3AOu.png)
+
+![Screenshot](https://i.imgur.com/TkIJjVU.png)
+
+![Screenshot](https://i.imgur.com/452zNii.png)
+
+![Screenshot](https://i.imgur.com/SFrsmed.png)
+
+
+## Stack utilizada
+
+**Front-end:** React, TypeScript, Sass, Redux, Styled Components, Context API
+
+**Back-end:** Node, Firebase
+
