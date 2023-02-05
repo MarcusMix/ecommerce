@@ -2,7 +2,7 @@ import { BsCart3 } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
 
 //Styles
-import { HeaderContainer, HeaderItems, HeaderItem, HeaderTitle } from './header.styles'
+import { HeaderContainer, HeaderItems, HeaderItem, HeaderTitle, AvatarIcon } from './header.styles'
 
 //Ultilities
 import { useDispatch } from 'react-redux'
@@ -12,10 +12,13 @@ import { logoutUser } from '../../store/toolkit/user/user.slice'
 import { toggleCart } from '../../store/toolkit/cart/cart.slice'
 import { useAppSelector } from '../../hooks/redux.hooks'
 import { selectProductsCount } from '../../store/reducers/cart/cart.selector'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const Header = () => {
 
     const { isAuthenticated } = useAppSelector((rootReducer: any) => rootReducer.userReducer)
+
+    const [user] = useAuthState(auth) 
 
     const productsCount = useAppSelector(selectProductsCount);
 
@@ -64,6 +67,7 @@ const Header = () => {
 
                 {isAuthenticated && (
                     <>
+                        <AvatarIcon src={user?.photoURL!}/>
                         <HeaderItem onClick={handleSignOutClick}>Sair</HeaderItem>
                     </>
                 )}
