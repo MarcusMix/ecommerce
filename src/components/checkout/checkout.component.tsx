@@ -20,7 +20,7 @@ const Checkout: FunctionComponent = () => {
 
     const [isLoading, setIsLoading] = useState(false)
 
-
+    //stripe api request
     const handleFinishPurchaceClick = async () => {
         try {
             setIsLoading(true);

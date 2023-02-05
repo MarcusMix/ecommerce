@@ -1,67 +1,77 @@
-import { FunctionComponent, useEffect } from "react"
-import { useNavigate, useSearchParams } from "react-router-dom"
-import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineHome } from 'react-icons/ai'
+import { FunctionComponent, useEffect } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import {
+  AiOutlineCheckCircle,
+  AiOutlineCloseCircle,
+  AiOutlineHome
+} from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
 
+// Styles
+import {
+  PaymentConfirmationContainer,
+  PaymentConfirmationContent
+} from './payment-confirmation.styles'
 
-//Styles
-import { PaymentConfirmationContainer, PaymentConfirmationContent } from "./payment-confirmation.styles"
+// Components
+import Header from '../../components/header/header.component'
+import CustomButton from '../../components/custom-button/custom-button.component'
 
-//Components
-import CustomButton from "../../components/custom-button/custom-button.component"
-import Header from "../../components/header/header.component"
-
-//Ultilities
-import Colors from "../../themes/themes.colors"
-import { useDispatch } from "react-redux"
-import { clearCartProducts } from "../../store/toolkit/cart/cart.slice"
+// Utilities
+import Colors from '../../themes/themes.colors'
+import { clearCartProducts } from '../../store/toolkit/cart/cart.slice'
 
 const PaymentConfirmationPage: FunctionComponent = () => {
+  const dispatch = useDispatch()
 
-    const dispatch = useDispatch()
+  const [searchParams] = useSearchParams()
 
-    const [searchParams] = useSearchParams()
-    const status = searchParams.get('sucess')
-    const isCanceled = searchParams.get('canceled') === 'true'
+  const navigate = useNavigate()
 
-    const navigate = useNavigate()
+  const status = searchParams.get('success')
+  const isCanceled = searchParams.get('canceled') === 'true'
 
-    const handleGoToHomePageClick = () => {
-        navigate('/')
+  useEffect(() => {
+    if (status === 'true') {
+      dispatch(clearCartProducts())
     }
+  }, [status])
 
-    useEffect(() => {
-        if (status === 'true') {
-            dispatch(clearCartProducts())
-        }
-    }, [status])
+  const handleGoToHomePageClick = () => {
+    navigate('/')
+  }
 
-    return (
-        <>
-            <Header />
+  return (
+    <>
+      <Header />
+      <PaymentConfirmationContainer>
+        <PaymentConfirmationContent>
+          {status === 'true' && (
+            <>
+              <AiOutlineCheckCircle size={120} color={Colors.sucess} />
+              <p>Sua compra foi finalizada com sucesso!</p>
+            </>
+          )}
 
-            <PaymentConfirmationContainer>
-                <PaymentConfirmationContent>
+          {(status === 'false' || isCanceled) && (
+            <>
+              <AiOutlineCloseCircle size={120} color={Colors.error} />
+              <p>
+                Ocorreu um erro ao finalizar sua compra. Por favor, tente
+                novamente.
+              </p>
+            </>
+          )}
 
-                    {status === 'true' && (
-                        <>
-                            <AiOutlineCloseCircle size={120} color={Colors.sucess} />
-                            <p>Sua compra foi finalizada com sucesso!</p>
-                        </>
-                    )}
-
-                    {(status === 'false' || isCanceled) && (
-                        <>
-                            <AiOutlineCheckCircle size={120} color={Colors.error} />
-                            <p>Ocoreu um erro ao finalizar sua compra. Por favor tente novamente!</p>
-                        </>
-                    )}
-
-
-                    <CustomButton startIcon={<AiOutlineHome />} onClick={handleGoToHomePageClick}>Ir para a página inicial</CustomButton>
-                </PaymentConfirmationContent>
-            </PaymentConfirmationContainer>
-        </>
-    )
+          <CustomButton
+            startIcon={<AiOutlineHome />}
+            onClick={handleGoToHomePageClick}>
+            Ir para a Página Inicial
+          </CustomButton>
+        </PaymentConfirmationContent>
+      </PaymentConfirmationContainer>
+    </>
+  )
 }
 
 export default PaymentConfirmationPage

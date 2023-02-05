@@ -28,8 +28,8 @@ const Cart: FunctionComponent = () => {
     const dispatch = useDispatch()
 
     const handleGoToCheckoutClick = () => {
+        dispatch(toggleCart())
         navigate('/checkout')
-
     }
 
     const handleScapeAreaClick = () => {
