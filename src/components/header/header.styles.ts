@@ -61,3 +61,8 @@ export const HeaderItem = styled.div`
         margin-right: 0;
     }
 `
+export const AvatarIcon = styled.img `
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 35px;
+`
