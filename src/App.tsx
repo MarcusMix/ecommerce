@@ -21,6 +21,7 @@ import { userConverter } from './converters/firestore.converters'
 import AuthenticationGuard from './components/guards/authentication.guard'
 import { loginUser, logoutUser } from './store/toolkit/user/user.slice'
 import { useAppSelector } from './hooks/redux.hooks'
+import Profile from './pages/profile/profile.component'
 
 
 const App: FunctionComponent = () => {
@@ -79,6 +80,7 @@ const App: FunctionComponent = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path='/sign-up' element={<SignUpPage />} />
         <Route path='/payment-confirmation' element={<PaymentConfirmationPage />} />
+        <Route path='/user-profile' element={<Profile />} />
       </Routes>
 
       <Cart />
