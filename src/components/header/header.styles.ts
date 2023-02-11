@@ -59,10 +59,12 @@ export const HeaderItem = styled.div`
 
     @media(max-width: 768px) {
         margin-right: 0;
+        padding-left: 12%;
     }
 `
 export const AvatarIcon = styled.img `
     width: 50px;
     border-radius: 50%;
     margin-right: 35px;
+    cursor: pointer;
 `
