@@ -40,7 +40,6 @@ const Profile = () => {
 
     return (
         <>
-        {/* <Header/> */}
         <HeaderContainer>
             <HeaderTitle onClick={() => navigate('/')}>CLUB CLOTHING</HeaderTitle>
             <HeaderItem onClick={handleSignOutClick}>Sair</HeaderItem>
@@ -48,7 +47,7 @@ const Profile = () => {
         <Wrapper>
             <h1>{user?.displayName}</h1>
             <h1>{user?.email}</h1>
-            <img src={user?.photoURL} alt={user?.displayName!} />
+            <img src={user?.photoURL!} alt={user?.displayName!} />
             <div>
                 <CustomButton onClick={handleBackToHomePage}> <HiHome size={20}/> Voltar para página principal</CustomButton>
             </div>
