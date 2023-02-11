@@ -52,6 +52,10 @@ const Header = () => {
         dispatch(toggleCart())
     }
 
+    const handleUserProfile = () => {
+        navigate('/user-profile')
+    }
+
     return (
         <HeaderContainer>
             <HeaderTitle onClick={handlePagePrincipal}>CLUB CLOTHING</HeaderTitle>
@@ -67,7 +71,7 @@ const Header = () => {
 
                 {isAuthenticated && (
                     <>
-                        <AvatarIcon src={user?.photoURL!}/>
+                        <AvatarIcon onClick={handleUserProfile} src={user?.photoURL!}/>
                         <HeaderItem onClick={handleSignOutClick}>Sair</HeaderItem>
                     </>
                 )}
