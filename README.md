@@ -8,7 +8,7 @@ Projeto para praticar react, e diversas outras tecnologias, para construir um Ec
 
 ## Autores
 
-- [@feliperocha](https://www.github.com/feliperocha)
+- [@feliperocha](https://www.github.com/felipemotarocha)
 - [@MarcusMix](https://www.github.com/marcusmix)
 
 
