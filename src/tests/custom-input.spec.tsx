@@ -1,4 +1,6 @@
+//testing library
 import { render } from "@testing-library/react"
+import userEvent from "@testing-library/user-event"
 
 //components
 import CustomInput from "../components/custom-input/custom-input.component"
@@ -21,5 +23,15 @@ describe('Custom Input', () => {
         const input = getByPlaceholderText('lorem ipsum')
 
         expect(input).toHaveStyle({border: 'none'})
+    })
+
+    it('should change value when user types', () => {
+        const { getByPlaceholderText, getByDisplayValue } = render(<CustomInput placeholder="lorem ipsum" hasError={false}/>)
+
+        const input = getByPlaceholderText('lorem ipsum')
+
+        userEvent.type(input, 'mudou o valor')
+
+        getByDisplayValue('mudou o valor')
     })
 })
